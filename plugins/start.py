@@ -91,7 +91,7 @@ async def start_command(client: Client, message: Message):
                     ids = [int(int(argument[1]) / abs(client.db_channel.id))]
                 except:
                     return
-            temp_msg = await message.reply("Please wait...")
+            temp_msg = await message.reply("☾︎Pʟᴇᴀsᴇ Wᴀɪᴛ☽︎...")
             try:
                 messages = await get_messages(client, ids)
             except:
@@ -121,8 +121,8 @@ async def start_command(client: Client, message: Message):
 
         elif verify_status['is_verified']:
             reply_markup = InlineKeyboardMarkup(
-                [[InlineKeyboardButton("About Me", callback_data="about"),
-                  InlineKeyboardButton("Close", callback_data="close")]]
+                [[InlineKeyboardButton("𝗔𝗯𝗼𝘂𝘁 ✿︎", callback_data="about"),
+                  InlineKeyboardButton("𝗖𝗹𝗼𝘀𝗲 ت︎", callback_data="close")]]
             )
             await message.reply_text(
                 text=START_MSG.format(
@@ -146,8 +146,8 @@ async def start_command(client: Client, message: Message):
                 await update_verify_status(id, verify_token=token, link="")
                 link = await get_shortlink(SHORTLINK_URL, SHORTLINK_API,f'https://telegram.dog/{client.username}?start=verify_{token}')
                 btn = [
-                    [InlineKeyboardButton("Click here", url=link)],
-                    [InlineKeyboardButton('How to use the bot', url=full_tut_url)]
+                    [InlineKeyboardButton("𝘾𝙡𝙞𝙘𝙠 𝙃𝙚𝙧𝙚 🙂", url=link)],
+                    [InlineKeyboardButton('𝘏𝘰𝘸 𝘛𝘰 𝘝𝘦𝘳𝘪𝘧𝘺シ︎', url=full_tut_url)]
                 ]
                 await message.reply(f"Your Ads token is expired, refresh your token and try again.\n\nToken Timeout: {get_exp_time(VERIFY_EXPIRE)}\n\nWhat is the token?\n\nThis is an ads token. If you pass 1 ad, you can use the bot for 24 Hour after passing the ad.", reply_markup=InlineKeyboardMarkup(btn), protect_content=False, quote=True)
 
@@ -158,7 +158,7 @@ async def start_command(client: Client, message: Message):
         
 #=====================================================================================##
 
-WAIT_MSG = """"<b>Processing ...</b>"""
+WAIT_MSG = """"<b>☾︎Pʟᴇᴀsᴇ Wᴀɪᴛ☽︎...</b>"""
 
 REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
 
@@ -171,7 +171,7 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(
-                "Join Channel",
+                "𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✔︎",
                 url = client.invitelink)
         ]
     ]
@@ -179,7 +179,7 @@ async def not_joined(client: Client, message: Message):
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = 'Try Again',
+                    text = '𝗧𝗿𝘆 𝗔𝗴𝗮𝗶𝗻 ⌫',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
